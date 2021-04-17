@@ -1,0 +1,114 @@
+.container {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin: 0.3rem;
+  border-radius: 1rem;
+  background: #006064;
+  box-shadow: inset -21px -21px 41px #004e51, inset 21px 21px 41px #007277;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  transition: all 0.15s ease;
+}
+
+.border {
+  border: 0.1rem solid white;
+  border-radius: 1rem;
+}
+
+.todo {
+  flex-grow: 4;
+}
+
+.mid-container {
+  display: flex;
+  align-items: center;
+}
+
+.material-icons {
+  width: fit-content;
+  color: white;
+}
+
+.tag-active {
+  font-size: 0.6rem;
+  padding: 0.2em;
+  border-radius: 1rem;
+  font-weight: bold;
+  font-style: normal;
+  background: silver;
+  border-color: silver;
+  color: #006064;
+  width: fit-content;
+  transition: all 0.15s ease;
+}
+
+.tag {
+  font-size: 0.6em;
+  padding: 0.2em;
+  border-radius: 1rem;
+  background: white;
+  color: #006064;
+  box-shadow: 20px 20px 60px #005255, -20px -20px 60px #006e73;
+  width: fit-content;
+  transition: all 0.15s ease;
+}
+
+.btn:focus {
+  outline: none !important;
+}
+
+.neumorphic-btn {
+  font-size: 1rem;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 80%;
+  color: #6d7587;
+  background-color: transparent;
+  transition: box-shadow 0.25s ease !important;
+}
+
+.neumorphic-btn:active {
+  box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15), -7px -7px 20px #428e92,
+    inset 0px 0px 4px rgba(255, 255, 255, 0),
+    inset 7px 7px 15px rgba(55, 84, 170, 0.15), inset -7px -7px 20px #428e92,
+    0px 0px 4px rgba(255, 255, 255, 0.2) !important;
+}
+
+.neumorphic-checkbox {
+  padding: 1rem;
+  position: relative;
+  margin: 0 5px;
+  transition: all 0.25s ease;
+}
+
+.neumorphic-checkbox::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.35s ease;
+}
+
+.neumorphic-container_active {
+  box-shadow: inset 13px 13px 26px #005255, inset -13px -13px 26px #006e73 !important;
+  border: 0.1rem solid #428e92;
+  border-radius: 1rem;
+  font-weight: lighter;
+  font-style: italic;
+  color: silver;
+  transition: all 0.15s ease;
+}
+
+.neumorphic-checkbox_active::after {
+  border: 2px solid silver;
+  background-color: silver;
+}
