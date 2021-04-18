@@ -4,10 +4,10 @@
   justify-content: space-between;
   align-items: center;
   color: white;
-  margin: 0.3rem;
+  margin: 0.8rem;
   border-radius: 1rem;
-  background: #006064;
-  box-shadow: inset -21px -21px 41px #004e51, inset 21px 21px 41px #007277;
+  background: linear-gradient(145deg, #29363c, #222d32);
+  box-shadow: 5px 5px 16px #1c2529, -5px -5px 16px #303f47;
   margin-bottom: 0.5rem;
   font-weight: bold;
   transition: all 0.15s ease;
@@ -40,7 +40,7 @@
   font-style: normal;
   background: silver;
   border-color: silver;
-  color: #006064;
+  color: var(--primary-color);
   width: fit-content;
   transition: all 0.15s ease;
 }
@@ -50,8 +50,7 @@
   padding: 0.2em;
   border-radius: 1rem;
   background: white;
-  color: #006064;
-  box-shadow: 20px 20px 60px #005255, -20px -20px 60px #006e73;
+  color: var(--primary-color);
   width: fit-content;
   transition: all 0.15s ease;
 }

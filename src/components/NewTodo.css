@@ -1,17 +1,24 @@
 .material-icons.md-36 {
   font-size: 36px;
+  cursor: pointer;
+  background: linear-gradient(145deg, #29363c, #222d32);
+  box-shadow: 5px 5px 9px #1d262b, -5px -5px 9px #2f3e45;
+  border-radius: 1rem;
+}
+
+.material-icons.md-36:active {
+  background: linear-gradient(145deg, #222d32, #29363c);
+  box-shadow: 5px 5px 9px #1d262b, -5px -5px 9px #2f3e45;
+  transition: all 0.5s ease;
 }
 
 .new-container {
   display: flex;
   box-sizing: border-box;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   color: white;
-  margin: 0.3rem;
-  border-radius: 1rem;
-  box-shadow: inset 8px 8px 18px #004e51, inset -8px -8px 18px #007277;
-  background: #006064;
+  margin: 0.8rem;
   margin-bottom: 0.5rem;
   font-weight: bold;
   transition: all 0.15s ease;
@@ -20,7 +27,7 @@
 #new-todo {
   margin: 0.5em 0 0.5em 0.8em;
   font-size: 1.2em;
-  max-width: 60%;
+  max-width: 50%;
   color: white;
   font-weight: bold;
   background: transparent;
@@ -30,39 +37,7 @@
 }
 
 #new-todo::placeholder {
+  font-weight: lighter;
   font-style: italic;
   color: rgba(255, 255, 255, 0.8);
-}
-
-#tags {
-  max-width: 23%;
-  overflow-wrap: break-word;
-  font-size: 0.5em;
-  color: white;
-  padding: 0.25em;
-  border: 0.1rem solid white;
-  border-radius: 1rem;
-  background: transparent;
-  font-weight: bold;
-  letter-spacing: 0.15em;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.15s ease;
-}
-#tags option[value="0"] {
-  display: none;
-}
-#tags:focus-within {
-  background-color: white;
-  color: #006064;
-  transition: all 0.15s ease;
-}
-#tags > option {
-  background: white;
-  color: #006064;
-  font-size: 2.5em;
-  font-weight: bold;
-}
-#tags > option:focus {
-  background: black;
 }
