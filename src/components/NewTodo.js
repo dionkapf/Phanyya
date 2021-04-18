@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SelectBox from "./SelectBox";
 import "./NewTodo.css";
 class NewTodo extends Component {
   constructor(props) {
@@ -16,16 +17,7 @@ class NewTodo extends Component {
           id="new-todo"
           placeholder="Add a new todo"
         />
-        <select name="tags" id="tags">
-          <option value="0">TAG</option>
-          {this.state.tags.map((tag, index) => {
-            return (
-              <option value={index + 1} key={index + 1}>
-                {tag.toUpperCase()}
-              </option>
-            );
-          })}
-        </select>
+        <SelectBox name="TAG" items={this.state.tags} />
         <div className="mid-container">
           <span className="material-icons md-36">add</span>
         </div>
