@@ -10,7 +10,7 @@
   background: linear-gradient(145deg, #222d32, #29363c);
   box-shadow: 5px 5px 9px #1d262b, -5px -5px 9px #2f3e45;
   color: var(--secondary-dark);
-  transition: all 0.5s ease;
+  transition: all 0.15s ease;
 }
 
 .new-container {
