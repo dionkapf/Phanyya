@@ -39,6 +39,7 @@
 .tag-active {
   font-size: 0.6rem;
   padding: 0.2em;
+  text-transform: capitalize;
   border-radius: 1rem;
   margin-right: 0.6em;
   font-weight: bold;
@@ -53,6 +54,7 @@
 .tag {
   font-size: 0.6em;
   padding: 0.2em;
+  text-transform: capitalize;
   margin-right: 0.6em;
   border-radius: 1rem;
   background: white;
