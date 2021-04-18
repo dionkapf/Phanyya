@@ -39,7 +39,7 @@ class TodoItem extends Component {
           <p className={this.state.active ? "tag-active border" : "tag border"}>
             {this.state.tag}
           </p>
-          <div className="material-icons">close</div>
+          <div className="material-icons close">close</div>
         </div>
       </span>
     );
