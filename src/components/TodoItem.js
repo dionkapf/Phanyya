@@ -4,8 +4,8 @@ class TodoItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todo: props.todo,
-      tag: props.tag,
+      todo: props.todo.text,
+      tag: props.todo.tag,
       active: false,
     };
     this.toggleActive = this.toggleActive.bind(this);
