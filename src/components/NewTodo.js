@@ -28,7 +28,6 @@ function NewTodo(props) {
         type="text"
         name="Todo"
         id="new-todo"
-        placeholder="Add a new todo"
         onChange={handleTextChange}
       />
       <SelectBox name="TAG" items={tags} getTag={handleTagChange} />
