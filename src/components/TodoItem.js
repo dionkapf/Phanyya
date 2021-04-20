@@ -4,28 +4,30 @@ import "./TodoItem.css";
 function TodoItem(props) {
   const [text, setText] = useState(props.todo.text);
   const [tag, setTag] = useState(props.todo.tag);
-  const [active, setActive] = useState(false);
+  const [completed, setCompleted] = useState(props.todo.completed);
 
-  const toggleActive = (currentActive) => {
-    setActive(!currentActive);
+  const toggleActive = () => {
+    setCompleted(!completed);
   };
 
   return (
     <span
-      className={active ? "container neumorphic-container_active" : "container"}
+      className={
+        completed ? "container" : "container neumorphic-container_active"
+      }
     >
       <button
         type="button"
         className={
-          active
-            ? "btn neumorphic-btn neumorphic-checkbox neumorphic-checkbox_active"
-            : "btn neumorphic-btn neumorphic-checkbox"
+          completed
+            ? "btn neumorphic-btn neumorphic-checkbox"
+            : "btn neumorphic-btn neumorphic-checkbox neumorphic-checkbox_active"
         }
-        onClick={toggleActive}
+        onClick={() => toggleActive(completed)}
       ></button>
       <p className="todo">{text}</p>
       <div className="mid-container">
-        <p className={active ? "tag-active border" : "tag border"}>{tag}</p>
+        <p className={completed ? "tag border" : "tag-active border"}>{tag}</p>
         <div className="material-icons close">close</div>
       </div>
     </span>
