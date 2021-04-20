@@ -11,8 +11,8 @@ class Todos extends Component {
   render() {
     return (
       <div>
-        {this.state.todos.map((todo) => {
-          return <TodoItem todo={todo} />;
+        {this.state.todos.map((todo, index) => {
+          return <TodoItem key={index} todo={todo} />;
         })}
       </div>
     );

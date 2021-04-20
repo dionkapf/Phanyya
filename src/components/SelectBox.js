@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import "./SelectBox.css";
-
-function Item(text) {
-  return <div className="select-item"></div>;
-}
 class SelectBox extends Component {
   constructor(props) {
     super(props);
@@ -11,11 +7,17 @@ class SelectBox extends Component {
       name: props.name,
       items: props.items,
     };
+    this.onSelectChange = this.onSelectChange.bind(this);
+  }
+
+  onSelectChange(e) {
+    const tag = this.state.items[parseInt(e.target.value) - 1].trim();
+    this.props.getTag(tag);
   }
 
   render() {
     return (
-      <select id="tags">
+      <select id="tags" onChange={this.onSelectChange}>
         <option value="0">{this.props.name}</option>
         {this.state.items.map((tag, index) => {
           return (
