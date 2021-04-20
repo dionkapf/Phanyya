@@ -1,16 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { TodosContext } from "../contexts/TodosContext";
 import TodoItem from "./TodoItem.js";
 
-function Todos(props) {
-  const [todos, setTodos] = useState(props.todos);
-
-  const addNewTodo = (todo) => {
-    setTodos({
-      ...todos,
-      todo,
-    });
-  };
-
+function Todos() {
+  console.log(TodosContext);
+  const { todos } = useContext(TodosContext);
   return (
     <div>
       {todos.map((todo, index) => {

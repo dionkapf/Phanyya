@@ -1,15 +1,10 @@
 import Header from "./components/Header.js";
 import Todos from "./components/Todos.js";
-import "./App.css";
 import NewTodo from "./components/NewTodo.js";
+import "./App.css";
+import TodosContextProvider from "./contexts/TodosContext.js";
 
 function App() {
-  const todos = [
-    { text: "Cook the dishes", tag: "HOME" },
-    { text: "Read The Sun Will Rise Again (and cry)", tag: "STUDY" },
-    { text: "Eat push ups", tag: "PERSONAL" },
-    { text: "Synergise rough draft", tag: "ACADEMIC" },
-  ];
   return (
     <div className="App">
       <link
@@ -17,8 +12,10 @@ function App() {
         rel="stylesheet"
       ></link>
       <Header />
-      <NewTodo tags={["Home", "Work", "Study", "Academic", "Personal"]} />
-      <Todos todos={todos} />
+      <TodosContextProvider>
+        <NewTodo tags={["Home", "Work", "Study", "Academic", "Personal"]} />
+        <Todos />
+      </TodosContextProvider>
     </div>
   );
 }
