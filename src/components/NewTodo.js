@@ -1,52 +1,41 @@
-import React, { Component } from "react";
+import React, { /* Component,  */ useState } from "react";
 import SelectBox from "./SelectBox";
 import "./NewTodo.css";
-class NewTodo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: "",
-      tag: "",
-      tags: props.tags,
-    };
-    this.handleTextChange = this.handleTextChange.bind(this);
-    this.handleAddButton = this.handleAddButton.bind(this);
-    this.handleTag = this.handleTag.bind(this);
-  }
 
-  handleTextChange(e) {
-    const text = e.target.value.trim();
-    this.setState({ text });
-  }
+function NewTodo(props) {
+  const [text, setText] = useState("");
+  const [tag, setTag] = useState("");
 
-  handleAddButton(e) {
-    console.log("TEXT:", this.state.text);
-    console.log("TAG:", this.state.tag);
-  }
+  const handleTextChange = (e) => {
+    setText(e.target.value.trim());
+  };
 
-  handleTag(tag) {
-    this.setState({ tag });
-  }
+  const handleAddButton = (e) => {
+    console.log("TEXT:", text);
+    console.log("TAG:", tag);
+  };
 
-  render() {
-    return (
-      <span className={"new-container"}>
-        <input
-          type="text"
-          name="Todo"
-          id="new-todo"
-          placeholder="Add a new todo"
-          onChange={this.handleTextChange}
-        />
-        <SelectBox name="TAG" items={this.state.tags} getTag={this.handleTag} />
-        <div className="mid-container">
-          <span className="material-icons md-36" onClick={this.handleAddButton}>
-            add
-          </span>
-        </div>
-      </span>
-    );
-  }
+  const handleTagChange = (tag) => {
+    setTag(tag);
+  };
+
+  return (
+    <span className={"new-container"}>
+      <input
+        type="text"
+        name="Todo"
+        id="new-todo"
+        placeholder="Add a new todo"
+        onChange={handleTextChange}
+      />
+      <SelectBox name="TAG" items={props.tags} getTag={handleTagChange} />
+      <div className="mid-container">
+        <span className="material-icons md-36" onClick={handleAddButton}>
+          add
+        </span>
+      </div>
+    </span>
+  );
 }
 
 export default NewTodo;
