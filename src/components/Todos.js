@@ -3,7 +3,6 @@ import { TodosContext } from "../contexts/TodosContext";
 import TodoItem from "./TodoItem.js";
 
 function Todos() {
-  console.log(TodosContext);
   const { todos } = useContext(TodosContext);
   return (
     <div>
