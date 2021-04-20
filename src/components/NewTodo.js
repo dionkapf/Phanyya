@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { TagsContext } from "../contexts/TagsContext";
 import SelectBox from "./SelectBox";
 import "./NewTodo.css";
 
 function NewTodo(props) {
   const [text, setText] = useState("");
   const [tag, setTag] = useState("");
+  const tags = useContext(TagsContext);
+  console.log("TAGS: ", tags);
 
   const handleTextChange = (e) => {
     setText(e.target.value.trim());
@@ -28,7 +31,7 @@ function NewTodo(props) {
         placeholder="Add a new todo"
         onChange={handleTextChange}
       />
-      <SelectBox name="TAG" items={props.tags} getTag={handleTagChange} />
+      <SelectBox name="TAG" items={tags} getTag={handleTagChange} />
       <div className="mid-container">
         <span className="material-icons md-36" onClick={handleAddButton}>
           add

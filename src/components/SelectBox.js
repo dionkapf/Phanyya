@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./SelectBox.css";
+
 class SelectBox extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +20,7 @@ class SelectBox extends Component {
     return (
       <select id="tags" onChange={this.onSelectChange}>
         <option value="0">{this.props.name}</option>
-        {this.state.items.map((tag, index) => {
+        {this.state.items.tags.map((tag, index) => {
           return (
             <option className="select-item" value={index + 1} key={index + 1}>
               {tag.toUpperCase()}
