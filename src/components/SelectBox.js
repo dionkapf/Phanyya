@@ -12,7 +12,7 @@ class SelectBox extends Component {
   }
 
   onSelectChange(e) {
-    const tag = this.state.items[parseInt(e.target.value) - 1].trim();
+    const tag = this.state.items.tags[parseInt(e.target.value) - 1].trim();
     this.props.getTag(tag);
   }
 
