@@ -3,6 +3,7 @@ import Todos from "./components/Todos.js";
 import NewTodo from "./components/NewTodo.js";
 import "./App.css";
 import TodosContextProvider from "./contexts/TodosContext.js";
+import TagsContextProvider from "./contexts/TagsContext.js";
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
       ></link>
       <Header />
       <TodosContextProvider>
-        <NewTodo tags={["Home", "Work", "Study", "Academic", "Personal"]} />
+        <TagsContextProvider>
+          <NewTodo />
+        </TagsContextProvider>
         <Todos />
       </TodosContextProvider>
     </div>
