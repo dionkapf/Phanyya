@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { TodosContext } from "../contexts/TodosContext";
 import "./TodoItem.css";
 
 function TodoItem(props) {
-  const [text, setText] = useState(props.todo.text);
-  const [tag, setTag] = useState(props.todo.tag);
+  const [text] = useState(props.todo.text);
+  const [tag] = useState(props.todo.tag);
   const [completed, setCompleted] = useState(props.todo.completed);
+  const { handleCompletedChange } = useContext(TodosContext);
 
   const toggleActive = () => {
     setCompleted(!completed);
+    handleCompletedChange(props.todo);
   };
 
   return (
