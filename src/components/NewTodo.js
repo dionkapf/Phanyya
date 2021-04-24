@@ -7,7 +7,6 @@ function NewTodo(props) {
   const [text, setText] = useState("");
   const [tag, setTag] = useState("");
   const tags = useContext(TagsContext);
-  console.log("TAGS: ", tags);
 
   const handleTextChange = (e) => {
     setText(e.target.value.trim());
