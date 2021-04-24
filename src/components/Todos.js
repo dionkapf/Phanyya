@@ -1,3 +1,4 @@
+// @ts-check
 import React, { useContext } from "react";
 import { TodosContext } from "../contexts/TodosContext";
 import TodoItem from "./TodoItem.js";

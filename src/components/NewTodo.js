@@ -1,5 +1,7 @@
+// @ts-check
 import React, { useState, useContext } from "react";
 import { TagsContext } from "../contexts/TagsContext";
+import { TodosContext } from "../contexts/TodosContext";
 import SelectBox from "./SelectBox";
 import "./NewTodo.css";
 
@@ -7,14 +9,27 @@ function NewTodo(props) {
   const [text, setText] = useState("");
   const [tag, setTag] = useState("");
   const tags = useContext(TagsContext);
+  const { handleNewTodo } = useContext(TodosContext);
 
   const handleTextChange = (e) => {
     setText(e.target.value.trim());
   };
 
   const handleAddButton = (e) => {
-    console.log("TEXT:", text);
-    console.log("TAG:", tag);
+    var errorMessage = "";
+    const newText = text.trim();
+    const newTag = tag.trim();
+    newText === "" && (errorMessage += "Please write in a todo!\n");
+    newTag === "" && (errorMessage += "Please pick a tag!");
+    if (newText === "" || newTag === "") {
+      alert(errorMessage);
+    } else {
+      handleNewTodo(newText, newTag);
+      // @ts-ignore
+      document.getElementById("new-todo").value = "";
+      // @ts-ignore
+      document.getElementById("tags").value = 0;
+    }
   };
 
   const handleTagChange = (tag) => {
@@ -27,6 +42,7 @@ function NewTodo(props) {
         type="text"
         name="Todo"
         id="new-todo"
+        className="new-todo"
         onChange={handleTextChange}
       />
       <SelectBox name="TAG" items={tags} getTag={handleTagChange} />

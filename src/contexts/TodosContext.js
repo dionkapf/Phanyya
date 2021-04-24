@@ -17,13 +17,11 @@ const TodosContextProvider = (props) => {
 
   useEffect(() => {}, [todos]);
 
-  const handleNewTodo = ({ text, tag, completed }) => {
+  const handleNewTodo = (text, tag) => {
     const id = todos[todos.length - 1].id + 1;
+    const completed = true;
     const todo = { id, text, tag, completed };
-    updateTodos({
-      ...todos,
-      todo,
-    });
+    updateTodos([...todos, todo]);
   };
 
   const handleDeleteTodo = (id) => {
@@ -41,7 +39,7 @@ const TodosContextProvider = (props) => {
 
   return (
     <TodosContext.Provider
-      value={{ todos, handleCompletedChange, handleDeleteTodo }}
+      value={{ todos, handleCompletedChange, handleDeleteTodo, handleNewTodo }}
     >
       {props.children}
     </TodosContext.Provider>
