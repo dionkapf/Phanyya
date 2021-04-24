@@ -1,9 +1,9 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 export const TodosContext = createContext();
 
 const TodosContextProvider = (props) => {
-  const [todos, setTodos] = useState([
+  const [todos, updateTodos] = useState([
     { id: 1, text: "Cook the dishes", tag: "HOME", completed: true },
     {
       id: 2,
@@ -15,13 +15,19 @@ const TodosContextProvider = (props) => {
     { id: 4, text: "Synergise rough draft", tag: "ACADEMIC", completed: true },
   ]);
 
-  const addNewTodo = ({ text, tag, completed }) => {
+  useEffect(() => {}, [todos]);
+
+  const handleNewTodo = ({ text, tag, completed }) => {
     const id = todos[todos.length - 1].id + 1;
     const todo = { id, text, tag, completed };
-    setTodos({
+    updateTodos({
       ...todos,
       todo,
     });
+  };
+
+  const handleDeleteTodo = (id) => {
+    updateTodos(todos.filter((todo) => todo.id !== parseInt(id)));
   };
 
   const handleCompletedChange = ({ id }) => {
@@ -34,7 +40,9 @@ const TodosContextProvider = (props) => {
   };
 
   return (
-    <TodosContext.Provider value={{ todos, handleCompletedChange }}>
+    <TodosContext.Provider
+      value={{ todos, handleCompletedChange, handleDeleteTodo }}
+    >
       {props.children}
     </TodosContext.Provider>
   );

@@ -6,13 +6,15 @@ function TodoItem(props) {
   const [text] = useState(props.todo.text);
   const [tag] = useState(props.todo.tag);
   const [completed, setCompleted] = useState(props.todo.completed);
-  const { handleCompletedChange } = useContext(TodosContext);
+  const { handleCompletedChange, handleDeleteTodo } = useContext(TodosContext);
 
-  const toggleActive = () => {
+  const toggleActive = (e) => {
     setCompleted(!completed);
     handleCompletedChange(props.todo);
   };
-
+  const deleteTodo = (e) => {
+    handleDeleteTodo(e.target.getAttribute("name"));
+  };
   return (
     <span
       className={
@@ -21,6 +23,7 @@ function TodoItem(props) {
     >
       <button
         type="button"
+        id={props.todo.id}
         className={
           completed
             ? "btn neumorphic-btn neumorphic-checkbox"
@@ -31,7 +34,13 @@ function TodoItem(props) {
       <p className="todo">{text}</p>
       <div className="mid-container">
         <p className={completed ? "tag border" : "tag-active border"}>{tag}</p>
-        <div className="material-icons close">close</div>
+        <div
+          className="material-icons close"
+          onClick={deleteTodo}
+          name={props.todo.id}
+        >
+          close
+        </div>
       </div>
     </span>
   );

@@ -4,10 +4,11 @@ import TodoItem from "./TodoItem.js";
 
 function Todos() {
   const { todos } = useContext(TodosContext);
+
   return (
     <div>
-      {todos.map((todo, index) => {
-        return <TodoItem key={index} todo={todo} />;
+      {todos.map((todo) => {
+        return <TodoItem key={todo.id} todo={todo} />;
       })}
     </div>
   );
