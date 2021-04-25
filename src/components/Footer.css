@@ -1,0 +1,33 @@
+.footer-container {
+  position: relative;
+  height: 6em;
+  margin-top: 3em;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+}
+
+.circle {
+  display: inline-block;
+  color: white;
+  height: 2em;
+  width: 2em;
+  border-radius: 100%;
+  background: linear-gradient(145deg, #29363c, #222d32);
+  box-shadow: 3px 3px 6px #202b30, -3px -3px 6px #2c3a40;
+  border-radius: 50%;
+  margin: 0 0.2em 0 0.2em;
+  padding: 0.5em;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.circle:active {
+  background: linear-gradient(145deg, #222d32, #29363c);
+  box-shadow: 5px 5px 9px #1d262b, -5px -5px 9px #2f3e45;
+  color: var(--secondary-dark);
+  transition: all 0.15s ease;
+}
