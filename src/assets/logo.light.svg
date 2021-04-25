@@ -9,5 +9,5 @@
     </g>
     <path d="M 708.055 268.529 Q 754.863 187.455 801.671 268.529 L 864.082 376.628 Q 910.89 457.702 817.274 457.702 L 692.452 457.702 Q 598.836 457.702 645.644 376.628 Z" style="fill: rgb(38, 50, 56);" transform="matrix(-1, 0.000085, -0.000085, -1, 954.721008, 604.17627)" bx:shape="triangle 598.836 187.455 312.054 270.247 0.5 0.3 1@338d5b54"/>
   </g>
-  <text style="fill: rgb(241, 235, 197); font-family: &quot;Roboto Slab&quot;; font-size: 72.7px; white-space: pre;" x="103.227" y="277.441" transform="matrix(1.071102, 0, 0, 1.086631, -14.258264, -23.322559)">Phanyya</text>
+  <text transform="matrix(1.071102, 0, 0, 1.086631, -14.258264, -23.322559)" style="fill: rgb(190, 185, 148); font-family: &quot;Roboto Slab&quot;; font-size: 72.7px; white-space: pre;" x="103.227" y="277.441">Phanyya</text>
 </svg>

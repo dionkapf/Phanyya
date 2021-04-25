@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.white.svg";
 import "./Header.css";
 import "./hamburger.css";
 
@@ -9,14 +9,13 @@ function Header() {
   };
   return (
     <div className="header">
-      <h1>
+      <a href="#Todo">
         <img
           src={logo}
-          alt="Todoer Logo"
-          style={{ width: "8vw", height: "8vw" }}
+          alt="Phanyya Logo"
+          style={{ width: "5em", height: "2em" }}
         />
-        Todoer
-      </h1>
+      </a>
       <button
         className="hamburger hamburger--minus"
         type="button"
